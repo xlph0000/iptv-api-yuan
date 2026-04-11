@@ -15,7 +15,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.13'
           # ✨ 新增：开启 pipenv 缓存，下次运行快到飞起
           cache: 'pipenv'
 
