@@ -15,16 +15,14 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.13'
-          # ✨ 新增：开启 pipenv 缓存，下次运行快到飞起
-          cache: 'pipenv'
+          python-version: '3.13' # 这里是 3.13
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install pipenv
-          # 如果缓存命中了，这一步会执行得非常快
-          pipenv --python 3.11
+          # 这里也必须是 3.13，保持绝对一致！
+          pipenv --python 3.13
           pipenv install --dev
 
       - name: Update IPTV
